@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="trailblazers.agile.agiletrailblazers.WeatherDetailsActivity"
+    android:background="@android:color/darker_gray">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:paddingTop="@dimen/view_margin"
+        android:paddingBottom="@dimen/view_margin">
+
+
+        <android.support.constraint.Guideline
+            android:id="@+id/left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/guideline_marging" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_end="@dimen/guideline_marging" />
+
+
+
+        <TextView
+            android:id="@+id/textView_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_margin"
+            android:text="@string/weather"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <TextView
+            android:id="@+id/textView_temperature_scale_symbol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_margin"
+            android:text="@string/fahrenheit_scale_symbol"
+            android:textColor="@color/black_text_color"
+            android:textSize="@dimen/body_text_header_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/right_guideline"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView_temperature_value"
+            app:layout_constraintTop_toBottomOf="@+id/textView_title" />
+
+        <TextView
+            android:id="@+id/textView_temperature_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/black_text_color"
+            android:textSize="@dimen/text_temp_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/textView_temperature_scale_symbol"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView_weather_description_header"
+            app:layout_constraintTop_toTopOf="@+id/textView_temperature_scale_symbol" />
+
+        <TextView
+            android:id="@+id/textView_weather_description_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/black_text_color"
+            android:textSize="@dimen/body_text_header_size"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/textView_temperature_value"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/left_guideline"
+            app:layout_constraintTop_toTopOf="@+id/textView_temperature_value" />
+
+        <TextView
+            android:id="@+id/textView_weather_description_sub_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textColor="@color/grey_text_color"
+            android:textSize="@dimen/body_text_value_size"
+            app:layout_constraintEnd_toEndOf="@+id/textView_weather_description_header"
+            app:layout_constraintStart_toStartOf="@+id/textView_weather_description_header"
+            app:layout_constraintTop_toBottomOf="@+id/textView_weather_description_header" />
+
+        <View
+            android:id="@+id/border1"
+            style="@style/BorderStyle"
+            app:layout_constraintEnd_toStartOf="@+id/right_guideline"
+            app:layout_constraintStart_toEndOf="@+id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/textView_weather_description_sub_header"></View>
+
+        <TextView
+            android:id="@+id/textView_windSpeed"
+            style="@style/TextViewBold"
+            android:text="@string/wind_speed"
+            app:layout_constraintEnd_toStartOf="@+id/textView_windSpeed_Value"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@+id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/border1" />
+
+        <TextView
+            android:id="@+id/textView_windSpeed_Value"
+            style="@style/TextViewNormal"
+            android:text=""
+            app:layout_constraintEnd_toStartOf="@+id/right_guideline"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView_windSpeed"
+            app:layout_constraintTop_toBottomOf="@+id/border1" />
+
+        <View
+            android:id="@+id/border2"
+            style="@style/BorderStyle"
+            app:layout_constraintEnd_toStartOf="@+id/right_guideline"
+            app:layout_constraintStart_toEndOf="@+id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/textView_windSpeed_Value"></View>
+
+        <TextView
+            android:id="@+id/textView_cloudiness"
+            style="@style/TextViewBold"
+            android:text="@string/cloudiness"
+            app:layout_constraintEnd_toStartOf="@+id/textView_cloudiness_Value"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@+id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/border2" />
+
+        <TextView
+            android:id="@+id/textView_cloudiness_Value"
+            style="@style/TextViewNormal"
+            android:text=""
+            app:layout_constraintEnd_toStartOf="@+id/right_guideline"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView_cloudiness"
+            app:layout_constraintTop_toBottomOf="@+id/border2" />
+
+        <View
+            android:id="@+id/border3"
+            style="@style/BorderStyle"
+            app:layout_constraintEnd_toStartOf="@+id/right_guideline"
+            app:layout_constraintStart_toEndOf="@+id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/textView_cloudiness_Value"></View>
+
+        <TextView
+            android:id="@+id/textView_pressure"
+            style="@style/TextViewBold"
+            android:text="@string/pressure"
+            app:layout_constraintEnd_toStartOf="@+id/textView_pressure_Value"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@+id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/border3" />
+
+        <TextView
+            android:id="@+id/textView_pressure_Value"
+            style="@style/TextViewNormal"
+            android:text=""
+            app:layout_constraintEnd_toStartOf="@+id/right_guideline"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView_pressure"
+            app:layout_constraintTop_toBottomOf="@+id/border3" />
+
+        <View
+            android:id="@+id/border4"
+            style="@style/BorderStyle"
+            app:layout_constraintEnd_toStartOf="@+id/right_guideline"
+            app:layout_constraintStart_toEndOf="@+id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/textView_pressure_Value"></View>
+
+        <TextView
+            android:id="@+id/textView_humidity"
+            style="@style/TextViewBold"
+            android:text="@string/humidity"
+            app:layout_constraintEnd_toStartOf="@+id/textView_humidity_Value"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@+id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/border4" />
+
+        <TextView
+            android:id="@+id/textView_humidity_Value"
+            style="@style/TextViewNormal"
+            android:text=""
+            app:layout_constraintEnd_toStartOf="@+id/right_guideline"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView_humidity"
+            app:layout_constraintTop_toBottomOf="@+id/border4" />
+
+        <View
+            android:id="@+id/border5"
+            style="@style/BorderStyle"
+            app:layout_constraintEnd_toStartOf="@+id/right_guideline"
+            app:layout_constraintStart_toEndOf="@+id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/textView_humidity_Value"></View>
+
+        <TextView
+            android:id="@+id/textView_sunrise"
+            style="@style/TextViewBold"
+            android:text="@string/sunrise"
+            app:layout_constraintEnd_toStartOf="@+id/textView_sunrise_Value"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@+id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/border5" />
+
+        <TextView
+            android:id="@+id/textView_sunrise_Value"
+            style="@style/TextViewNormal"
+            android:text=""
+            app:layout_constraintEnd_toStartOf="@+id/right_guideline"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView_sunrise"
+            app:layout_constraintTop_toBottomOf="@+id/border5" />
+
+        <TextView
+            android:id="@+id/textView_place"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/measured"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/right_guideline"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/textView_sunrise_Value" />
+
+        <android.support.constraint.Group
+            android:id="@+id/group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="border4,textView_title,textView_humidity_Value,textView_sunrise_Value,textView_weather_description_header,textView_sunrise,textView_cloudiness_Value,textView_pressure,textView_temperature_value,border1,textView_place,textView_pressure_Value,border2,textView_humidity,textView_temperature_scale_symbol,textView_cloudiness,textView_weather_description_sub_header,border5,border3,textView_windSpeed_Value,textView_windSpeed" />
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>
